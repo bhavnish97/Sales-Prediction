@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title> My HTML </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous">
+    <style>
+        .login{
+            text-align : center;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</head>
+<body>
+    <div class="login">
+        <h2> Sales Prediction </h2>
+        <p>Please enter the amount spend on TV, Radio and Newspaper Advertisment in a year:</p>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="TV" placeholder="TV" required="required">
+        <input type="text" name="radio" placeholder="radio" required="required">
+        <input type="text" name="newspaper" placeholder="newspaper" required="required">
+        <br/><br/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Sales Prediction</button>
+    </form>
+        <b>{{prediction_text}}</b>
+    </div> 
+</body>
+</html>
+    
