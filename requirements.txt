@@ -4,4 +4,5 @@ Pandas
 Numpy
 Matplotlib
 Seaborn
+joblib
 gunicorn

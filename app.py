@@ -5,6 +5,9 @@ import pandas as pd
 # creating flask app
 app = Flask(__name__)
 
+model = joblib.load('final_model.pkl')
+col_names = joblib.load('column_names.pkl')
+
 @app.route("/")
 def hello():
     return render_template("index.html")
@@ -25,8 +28,4 @@ def predict():
 # Load the model and columns names
 
 if __name__ == '__main__':
-                           
-    model = joblib.load('final_model.pkl')
-    col_names = joblib.load('column_names.pkl')
-    
     app.run(debug=True)
