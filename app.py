@@ -20,7 +20,7 @@ def predict():
     
     prediction = model.predict([[TV, radio, newspaper]])
     
-    return render_template("index.html", prediction_text=f'If you spend ${TV}K  on TV, ${radio}K on Radio and ${newspaper}K on newspapaer advertisment, then your sales will be ${round(prediction[0],2)}K')
+    return render_template("index.html", prediction_text='If you spend ${}K  on TV, ${}K on Radio and ${}K on newspapaer advertisment, then your sales will be {}'.format(TV, radio, newspaper,'$'+str({round(prediction[0],2)})+'K'))
 
 # Load the model and columns names
 
